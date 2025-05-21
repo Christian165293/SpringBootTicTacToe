@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test-java:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:21.0
     steps:
       - checkout
       - run:
@@ -23,11 +23,9 @@ jobs:
       - store_artifacts:
           path: build/reports
   deploy:
-    # This is an example deploy job, not actually used by the workflow
     docker:
       - image: cimg/base:stable
     steps:
-      # Replace this with steps to deploy to users
       - run:
           name: deploy
           command: '#e.g. ./deploy.sh'
